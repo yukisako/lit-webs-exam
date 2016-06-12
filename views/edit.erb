@@ -35,7 +35,7 @@
                     <label for="categories">カテゴリ</label>
                     <select id="categories" name="category">
                         <% @categories.each do |category| %>
-                            <option value="<%= category.id %>"><%= category.name %></option>
+                            <option value="<%= category.id %>" <%= (category.id == @memo.category_id) ? "selected" : nil%>><%= category.name %></option>
                         <% end %>
                     </select>
 
