@@ -27,19 +27,16 @@
 
         <div class="main">
             <!-- フォームに関する記述はここに -->
-            <form class="pure-form" action="" method="">
+            <form class="pure-form" action="/renew/<%= @memo.id %>" method="post">
                 <fieldset>
                     <legend>メモの編集</legend>
-
-                    <input type="text" name="" placeholder="タイトル" value="">
-                    <input type="text" name="" placeholder="内容" value="">
-
+                    <input type="text" name="title" value="<%= @memo.title %>">
+                    <input type="text" name="body" value="<%=@memo.body%>">
                     <label for="categories">カテゴリ</label>
-                    <select id="categories" name="">
-                        <!-- カテゴリに関する記述はここに -->
-                        <option value="">カテゴリ名1</option>
-                        <option value="">カテゴリ名2</option>
-                        <option value="">カテゴリ名3</option>
+                    <select id="categories" name="category">
+                        <% @categories.each do |category| %>
+                            <option value="<%= category.id %>"><%= category.name %></option>
+                        <% end %>
                     </select>
 
                     <button type="submit" class="pure-button pure-button-primary">更新</button>
