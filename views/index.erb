@@ -30,6 +30,7 @@
                     <% @categories.each do |category| %>
                         <li class="pure-menu-item"><a href="/category/<%= category.id %>" class="pure-menu-link"><%= category.name %></a></li>
                     <% end %>
+                    <li class="pure-menu-item"><a href="http://syusui-s.github.io/yaruki.html" class="pure-menu-link">Come on YARUKI!!</a></li>
                 </ul>
             </div>
         </div>
@@ -39,7 +40,6 @@
             <form class="pure-form" action="/new" method="post">
                 <fieldset>
                     <legend>新しいメモを追加</legend>
-
                     <input type="text" name="title" placeholder="タイトル">
                     <input type="text" name="body" placeholder="内容">
                     <label for="categories">カテゴリ</label>
@@ -53,7 +53,7 @@
                     <button type="submit" class="pure-button pure-button-primary">追加</button>
                 </fieldset>
             </form>
-    
+            
             <% if @category_name.present? %>
                 <h2><%= @category_name %></h2>
             <% end %>
@@ -93,7 +93,6 @@
                 <% end %>
             </div>
         </div>
-
         <script>
 (function(window, document) {
     document.getElementById('toggle').addEventListener('click', function(e) {
